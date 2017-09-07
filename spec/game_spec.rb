@@ -25,4 +25,9 @@ describe Game
       game.print_board
       expect(" 1 | 2 | 3 \n 4 | 5 | 6 \n 7 | 8 | 9").to match(game.print_board)
     end
+
+    it "print the game to stdout" do
+      game = Game.new
+      expect { game.print_board }.to output.to_stdout
+    end
   end
