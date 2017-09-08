@@ -12,7 +12,7 @@ describe Game
     end
 
     # Game uses numbers to identify where the player will place their character
-    it "uses numbers in the array" do
+    it "returns an array of numbers" do
       board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
       game = Game.new
       game.board
@@ -22,12 +22,11 @@ describe Game
     # Game uses print_board to print the game board after every move
     it "prints the board" do
       game = Game.new
-      game.print_board
-      expect(" 1 | 2 | 3 \n 4 | 5 | 6 \n 7 | 8 | 9").to match(game.print_board)
+      expect(puts " 1 | 2 | 3 \n 4 | 5 | 6 \n 7 | 8 | 9 ").to match(game.print_board(game.board))
     end
 
-    it "print the game to stdout" do
+    it "prints the game to stdout" do
       game = Game.new
-      expect { game.print_board }.to output.to_stdout
+      expect { game.print_board(game.board) }.to output.to_stdout
     end
   end
