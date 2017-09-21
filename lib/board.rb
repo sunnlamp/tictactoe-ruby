@@ -12,5 +12,6 @@ class Board
 
   def make_x_move(position)
     @board.delete_at(position)
+    @board.insert(0, 'X')
   end
 end
