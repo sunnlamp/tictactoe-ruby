@@ -5,7 +5,7 @@ describe Board
   describe "the tic tac toe board" do
 
     # It uses an array to facilitate the board
-    it "initializes the game board" do
+    it "initializes the game board as an array" do
       game = Board.new
       expect(game.board).to be_instance_of(Array)
     end
@@ -31,28 +31,28 @@ describe Board
 
     it "replaces the original cell value with an X at index 0" do
       game = Board.new
-      game.make_x_move(0)
+      game.make_move(0, 'X')
       board = ['X', 2, 3, 4, 5, 6, 7, 8, 9]
       expect(game.board).to eq(board)
     end
 
     it "replace the original cell value with an O at index 0" do
       game = Board.new
-      game.make_o_move(0)
+      game.make_move(0, 'O')
       board = ['O', 2, 3, 4, 5, 6, 7, 8, 9]
       expect(game.board).to eq(board)
     end
 
     it "replaces the orignal cell value with an X at index 5" do
       game = Board.new
-      game.make_x_move(5)
+      game.make_move(5, 'X')
       board = [1, 2, 3, 4, 5, 'X', 7, 8, 9]
       expect(game.board).to eq(board)
     end
 
     it "relace the original cell value with an O at index 5" do
       game = Board.new
-      game.make_o_move(5)
+      game.make_move(5, 'O')
       board = [1, 2, 3, 4, 5, 'O', 7, 8, 9]
       expect(game.board).to eq(board)
     end

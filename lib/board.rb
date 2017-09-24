@@ -10,13 +10,12 @@ class Board
     puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
 
-  def make_x_move(position)
+  def make_move(position, player)
     @board.delete_at(position)
-    @board.insert(position, 'X')
+    @board.insert(position, player)
   end
 
-  def make_o_move(position)
-    @board.delete_at(position)
-    @board.insert(position, 'O')
+  def check_diagonals(position, player)
+    @board.select { |a| a == player}
   end
 end
