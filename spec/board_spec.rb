@@ -57,4 +57,9 @@ describe Board
       expect(game.board).to eq(board)
     end
 
+    it "gets the index and returns the value" do
+      game = Board.new
+      expect(game.get_index(0)).to eq(1)
+      expect(game.get_index(1)).to eq(2)
+    end
   end

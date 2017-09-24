@@ -27,4 +27,8 @@ class Board
       retunr :winner
     end
   end
+
+  def get_index(position)
+    @board[position]
+  end
 end
