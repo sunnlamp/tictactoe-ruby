@@ -62,4 +62,14 @@ describe Board
       expect(game.get_index(0)).to eq(1)
       expect(game.get_index(1)).to eq(2)
     end
+
+    it "checks the diagonals for winning sets" do
+      game = Board.new
+      game.make_move(0, 'X')
+      game.make_move(4, 'X')
+      game.make_move(8, 'X')
+      winning_diagonal = [game.get_index(0), game.get_index(4), game.get_index(8)]
+      player_diagonal = game.board.select { |pos| pos == 'X' }
+      expect(winning_diagonal).to eq(player_diagonal)
+    end
   end
