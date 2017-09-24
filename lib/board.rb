@@ -12,6 +12,11 @@ class Board
 
   def make_x_move(position)
     @board.delete_at(position)
-    @board.insert(0, 'X')
+    @board.insert(position, 'X')
+  end
+
+  def make_o_move(position)
+    @board.delete_at(position)
+    @board.insert(position, 'O')
   end
 end
