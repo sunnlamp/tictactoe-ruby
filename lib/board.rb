@@ -48,13 +48,10 @@ class Board
   end
 
   def winning_positions
-      diagonals +
-      horizontals +
-      verticals
+    diagonals + horizontals + verticals
   end
 
   def winner?
-    winning_positions.map { |index| index.value  }
+    winning_positions.map { |index| index.value }
   end
-  
 end
