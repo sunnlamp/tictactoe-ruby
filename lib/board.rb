@@ -46,4 +46,15 @@ class Board
       [board[2], board[5], board[8]]
     ]
   end
+
+  def winning_positions
+      diagonals +
+      horizontals +
+      verticals
+  end
+
+  def winner?
+    winning_positions.map { |index| index.value  }
+  end
+  
 end

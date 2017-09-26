@@ -77,28 +77,53 @@ describe Board
       game = Board.new
       board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
       expect(game.diagonals).to eq([
-                                      [board[0], board[4], board[8]],
-                                      [board[2], board[4], board[6]]
-                                    ])
+                                     [board[0], board[4], board[8]],
+                                     [board[2], board[4], board[6]]
+                                   ])
     end
 
     it "maintains a reference to the winning horizontals" do
       game = Board.new
       board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
       expect(game.horizontals).to eq([
-                                      [board[0], board[1], board[2]],
-                                      [board[3], board[4], board[5]],
-                                      [board[6], board[7], board[8]]
-                                    ])
+                                       [board[0], board[1], board[2]],
+                                       [board[3], board[4], board[5]],
+                                       [board[6], board[7], board[8]]
+                                     ])
     end
 
     it "maintains a reference to the winning verticals" do
       game = Board.new
       board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
       expect(game.verticals).to eq([
-                                      [board[0], board[3], board[6]],
-                                      [board[1], board[4], board[7]],
-                                      [board[2], board[5], board[8]]
-                                    ])
+                                     [board[0], board[3], board[6]],
+                                     [board[1], board[4], board[7]],
+                                     [board[2], board[5], board[8]]
+                                   ])
+    end
+
+    it "collects all winning combinations" do
+      game = Board.new
+      board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      expect(game.winning_positions).to eq([
+                                            [board[0], board[4], board[8]],
+                                            [board[2], board[4], board[6]],
+                                            [board[0], board[1], board[2]],
+                                            [board[3], board[4], board[5]],
+                                            [board[6], board[7], board[8]],
+                                            [board[0], board[3], board[6]],
+                                            [board[1], board[4], board[7]],
+                                            [board[2], board[5], board[8]]
+                                          ])
+    end
+
+    it "checks the winning positions for a set of matching values" do
+      game = Board.new
+      board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      player = 'X'
+      game.make_move(0, player)
+      game.make_move(1, player)
+      game.make_move(2, player)
+      expect(game.winner?).to eq(true)
     end
   end
