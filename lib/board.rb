@@ -19,17 +19,31 @@ class Board
     @board.insert(position, player)
   end
 
-  # used to check the two diagonal winning moves
-  def check_diagonals(player)
-    if get_index(0) == player && @board[4] == player && @board[8] == player
-      return :winner
-    elsif @board[2] == player && @board[4] == player && @board[6] == player
-      retunr :winner
-    end
-  end
-
   # this returns the value at the index provided
   def get_index(position)
     @board[position]
+  end
+
+  def diagonals
+    [
+      [board[0], board[4], board[8]],
+      [board[2], board[4], board[6]]
+    ]
+  end
+
+  def horizontals
+    [
+      [board[0], board[1], board[2]],
+      [board[3], board[4], board[5]],
+      [board[6], board[7], board[8]]
+    ]
+  end
+
+  def verticals
+    [
+      [board[0], board[3], board[6]],
+      [board[1], board[4], board[7]],
+      [board[2], board[5], board[8]]
+    ]
   end
 end
