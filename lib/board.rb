@@ -19,7 +19,7 @@ class Board
     @board.insert(position, player)
   end
 
-  # this returns the value at the index provided
+  # returns the value at the index provided
   def get_index(position)
     @board[position]
   end
