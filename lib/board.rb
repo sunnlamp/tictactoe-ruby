@@ -51,7 +51,14 @@ class Board
     diagonals + horizontals + verticals
   end
 
-  def winner?
-    winning_positions.map { |index| index.value }
-  end
+  # def check_winning_set(position)
+  #   position.map { |index| index }
+  # end
+  #
+  # def winner?
+  #   winning_positions.each do |position|
+  #     return true if check_winning_set(position)
+  #   end
+  #   false
+  # end
 end

@@ -114,13 +114,12 @@ describe Board
                                            ])
     end
 
-    it 'checks the winning positions for a set of matching values' do
-      game = Board.new
-      board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-      player = 'X'
-      game.make_move(0, player)
-      game.make_move(1, player)
-      game.make_move(2, player)
-      expect(game.winner?).to eq(true)
-    end
+    # it 'checks for a winning set' do
+    #   game = Board.new
+    #   player = 'X'
+    #   game.make_move(1, player)
+    #   game.make_move(4, player)
+    #   game.make_move(7, player)
+    #   expect(game.winner?).to eq(true)
+    # end
   end
