@@ -61,4 +61,8 @@ class Board
   #   end
   #   false
   # end
+
+  def all_same?
+    self.all? { |element| element == self[0]}
+  end
 end
