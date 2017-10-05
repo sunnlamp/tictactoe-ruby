@@ -6,7 +6,7 @@ class Board
     @squares = [
       [nil, nil, nil],
       [nil, nil, nil],
-      [nil, nil, nil],
+      [nil, nil, nil]
     ]
   end
 
@@ -33,7 +33,7 @@ class Board
     if @squares[row][col].nil?
       @squares[row][col] = player
     else
-      raise ArgumentError.new("Position already taken!")
+      raise ArgumentError.new('Position already taken!')
     end
   end
 
@@ -83,6 +83,6 @@ class Board
   # end
 
   def all_same?
-    self.all? { |element| element == self[0]}
+    self.all? { |element| element == self[0] }
   end
 end
