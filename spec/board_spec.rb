@@ -1,7 +1,7 @@
 require 'board'
 
 describe Board do
-  context '#initialize' do
+  describe '#initialize' do
     it 'initializes the game board as a 2D array' do
       game = Board.new
 
@@ -15,37 +15,37 @@ describe Board do
     end
   end
 
-  describe '#board_string' do
-    context 'when the board is empty' do
-      it 'prints the board sauare numbers' do
-        game = Board.new
-        board = " 1 | 2 | 3 \n 4 | 5 | 6 \n 7 | 8 | 9 "
+  # describe '#board_string' do
+  #   context 'when the board is empty' do
+  #     it 'prints the board sauare numbers' do
+  #       game = Board.new
+  #       board = " 1 | 2 | 3 \n 4 | 5 | 6 \n 7 | 8 | 9 "
+  #
+  #       expect(game.board_string).to match(board)
+  #     end
+  #   end
+  #
+  #   context 'when the board has squares filled' do
+  #     it 'prints the board square number where empty, and markers where occupied' do
+  #       game = Board.new
+  #       player1 = 'X'
+  #       player2 = 'O'
+  #       game.make_move(3, player1)
+  #       game.make_move(7, player2)
+  #       board = " 1 | 2 | #{player1} \n 4 | 5 | 6 \n #{player2} | 8 | 9 "
+  #
+  #       expect(game.board_string).to match(board)
+  #     end
+  #   end
+  # end
 
-        expect(game.board_string).to match(board)
-      end
-    end
-
-    context 'when the board has squares filled' do
-      it 'prints the board square number where empty, and markers where occupied' do
-        game = Board.new
-        player1 = 'X'
-        player2 = 'O'
-        game.make_move(3, player1)
-        game.make_move(7, player2)
-        board = " 1 | 2 | #{player1} \n 4 | 5 | 6 \n #{player2} | 8 | 9 "
-
-        expect(game.board_string).to match(board)
-      end
-    end
-  end
-
-  describe '#print_board' do
-    it 'prints the game to stdout' do
-      game = Board.new
-
-      expect { game.print_board }.to output.to_stdout
-    end
-  end
+  # describe '#print_board' do
+  #   it 'prints the game to stdout' do
+  #     game = Board.new
+  #
+  #     expect { game.print_board }.to output.to_stdout
+  #   end
+  # end
 
   describe '#get_index' do
     it 'returns the row and column given a position number' do
