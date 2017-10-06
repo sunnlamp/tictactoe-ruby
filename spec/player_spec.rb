@@ -8,10 +8,5 @@ describe Player do
 
       expect(player.name).to eq('Nombre')
     end
-
-    it 'assigns the players a symbol' do
-      player = Player.new('Name')
-      expect(player.symbol).to include('X' || 'O')
-    end
   end
 end

@@ -3,6 +3,5 @@ class Player
 
   def initialize(name)
     @name = name
-    @symbol = ['X', 'O'].sample
   end
 end
