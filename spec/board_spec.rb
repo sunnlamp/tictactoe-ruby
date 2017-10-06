@@ -113,4 +113,23 @@ describe Board do
       expect(board.winner?).to eq(true)
     end
   end
+
+  describe '#draw?' do
+    it 'checks for a draw game' do
+      board = Board.new
+      player1 = 'X'
+      player2 = 'O'
+      board.make_move(1, player1)
+      board.make_move(4, player2)
+      board.make_move(2, player1)
+      board.make_move(3, player2)
+      board.make_move(6, player1)
+      board.make_move(5, player2)
+      board.make_move(7, player1)
+      board.make_move(8, player2)
+      board.make_move(9, player1)
+
+      expect(board.draw?).to eq(true)
+    end
+  end
 end

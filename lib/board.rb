@@ -80,4 +80,11 @@ class Board
     end
     false
   end
+
+  def draw?
+    if squares.map { |a| a }.nil?
+      return false
+    end
+    true
+  end
 end
