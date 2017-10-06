@@ -46,24 +46,24 @@ class Board
 
   def diagonals
     [
-      [board[0], board[4], board[8]],
-      [board[2], board[4], board[6]]
+      [squares[0][0], squares[1][1], squares[2][2]],
+      [squares[0][2], squares[1][1], squares[2][0]]
     ]
   end
 
   def horizontals
     [
-      [board[0], board[1], board[2]],
-      [board[3], board[4], board[5]],
-      [board[6], board[7], board[8]]
+      [squares[0][0], squares[0][1], squares[0][2]],
+      [squares[1][0], squares[1][1], squares[1][2]],
+      [squares[2][0], squares[2][1], squares[2][2]]
     ]
   end
 
   def verticals
     [
-      [board[0], board[3], board[6]],
-      [board[1], board[4], board[7]],
-      [board[2], board[5], board[8]]
+      [squares[0][0], squares[1][0], squares[2][0]],
+      [squares[0][1], squares[1][1], squares[2][1]],
+      [squares[0][2], squares[1][2], squares[2][2]]
     ]
   end
 

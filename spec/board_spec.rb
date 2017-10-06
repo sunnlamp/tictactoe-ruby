@@ -65,10 +65,31 @@ describe Board do
       it 'raises an expection' do
         game = Board.new
         game.make_move(1, 'X')
-        exception = 'Position already taken!'
 
-        expect { game.make_move(1, 'X') }.to raise_exception(exception)
+        expect{ game.make_move(1, 'X') }.to raise_exception('Position already taken!')
       end
+    end
+  end
+
+  describe '#winning_positions' do
+    it 'keeps an array of the winning positions' do
+      game = Board.new
+      squares = [
+        [nil, nil, nil],
+        [nil, nil, nil],
+        [nil, nil, nil]
+      ]
+      winning_positions =
+      [squares[0][0], squares[1][1], squares[2][2]],
+      [squares[0][2], squares[1][1], squares[2][0]],
+      [squares[0][0], squares[0][1], squares[0][2]],
+      [squares[1][0], squares[1][1], squares[1][2]],
+      [squares[2][0], squares[2][1], squares[2][2]],
+      [squares[0][0], squares[1][0], squares[2][0]],
+      [squares[0][1], squares[1][1], squares[2][1]],
+      [squares[0][2], squares[1][2], squares[2][2]]
+
+      expect(game.winning_positions).to eq(winning_positions)
     end
   end
 end
