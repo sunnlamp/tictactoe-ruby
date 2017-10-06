@@ -1,5 +1,4 @@
 class BoardDisplay
-  attr_reader :board_string
 
   def print_board
     puts board_string

@@ -5,7 +5,7 @@ describe BoardDisplay do
       it 'prints the game to stdout' do
         display = BoardDisplay.new
 
-        expect{ display.print_board }.to output.to_stdout
+        expect { display.print_board }.to output.to_stdout
       end
     end
 
