@@ -12,7 +12,7 @@ describe Player do
     it 'assigns the players a symbol' do
       player = Player.new('Name')
 
-      expect(player.symbol).to include('X', 'O')
+      expect(player.symbol).to include('X' || 'O')
     end
   end
 end

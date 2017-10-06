@@ -3,6 +3,6 @@ class Player
 
   def initialize(name)
     @name = name
-    @symbol = ['X', 'O'].shuffle
+    @symbol = ['X', 'O'].sample
   end
 end
