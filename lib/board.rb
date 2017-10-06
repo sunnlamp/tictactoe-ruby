@@ -70,18 +70,14 @@ class Board
     diagonals + horizontals + verticals
   end
 
-  # def check_winning_set(position)
-  #   position.map { |index| index }
-  # end
-  #
-  # def winner?
-  #   winning_positions.each do |position|
-  #     return true if check_winning_set(position)
-  #   end
-  #   false
-  # end
+  def check_winning_set(position)
+    position.map { |index| index }
+  end
 
-  def all_same?
-    self.all? { |element| element == self[0] }
+  def winner?
+    winning_positions.each do |position|
+      return true if check_winning_set(position).all? { |a| a == a[0]  }
+    end
+    false
   end
 end

@@ -101,4 +101,16 @@ describe Board do
       expect(game.winning_positions).to eq(winning_positions)
     end
   end
+
+  describe '#winner?' do
+    it 'checks for a winning set' do
+      board = Board.new
+      player = 'X'
+      board.make_move(1, player)
+      board.make_move(5, player)
+      board.make_move(9, player)
+
+      expect(board.winner?).to eq(true)
+    end
+  end
 end
