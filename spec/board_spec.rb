@@ -26,7 +26,16 @@ describe Board do
     end
 
     context 'when the board has squares filled' do
-      it 'prints the board square number where empty, and markers where occupied'
+      it 'prints the board square number where empty, and markers where occupied' do
+        game = Board.new
+        player1 = 'X'
+        player2 = 'O'
+        game.make_move(3, player1)
+        game.make_move(7, player2)
+        board = " 1 | 2 | #{player1} \n 4 | 5 | 6 \n #{player2} | 8 | 9 "
+
+        expect(game.board_string).to match(board)
+      end
     end
   end
 
