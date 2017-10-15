@@ -79,16 +79,21 @@ class Board
 
   def winner?
     winning_positions.each do |position|
-      next if check_winning_set(position).any? { |a| a == nil }
-      return true if check_winning_set(position).all? { |a| a == a[0]  }
+      next if position.any? { |square| square == nil }
+      return true if position.all? { |square| square == position[0]  }
     end
-    false
+    return false
+    # winning_positions.each do |position|
+    #   next if check_winning_set(position).any? { |a| a == nil }
+    #   return true if check_winning_set(position).all? { |a| a == a[0]  }
+    # end
+    # false
   end
 
   def draw?
-    if squares.map { |a| a }.nil?
-      return false
+    if winning_positions.map { |position| position.nil? }
+      return true
     end
-    true
+    return false
   end
 end
