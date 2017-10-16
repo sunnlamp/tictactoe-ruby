@@ -104,14 +104,26 @@ describe Board do
   end
 
   describe '#winner?' do
-    it 'returns true for a winning set' do
+    it 'returns true for a winning set - case 1' do
       board = Board.new
       player = 'X'
       board.make_move(2, player)
       board.make_move(5, player)
       board.make_move(8, player)
-      puts
-      board.print_board
+
+      expect(board.winner?).to eq(true)
+    end
+
+    it 'returns true for a winning set - case 2' do
+      board = Board.new
+      player1 = 'X'
+      player2 = 'O'
+      board.make_move(1, player2)
+      board.make_move(2, player1)
+      board.make_move(4, player2)
+      board.make_move(5, player1)
+      board.make_move(7, player2)
+
       expect(board.winner?).to eq(true)
     end
 
@@ -128,8 +140,7 @@ describe Board do
       board.make_move(7, player1)
       board.make_move(8, player2)
       board.make_move(9, player1)
-      puts
-      board.print_board
+
       expect(board.winner?).to eq(false)
     end
   end
