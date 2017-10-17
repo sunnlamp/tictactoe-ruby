@@ -3,11 +3,10 @@ require 'player'
 describe Player do
   describe '#initialize' do
     it 'returns the player name' do
+      player = Player.new('Nombre')
       name = 'Nombre'
-      symbol = 'X'
-      player = Player.new(name, symbol)
 
-      expect(player.name).to eq('Nombre')
+      expect(player.name).to eq(name)
     end
   end
 end
