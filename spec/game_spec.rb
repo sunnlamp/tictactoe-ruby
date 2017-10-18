@@ -53,18 +53,18 @@ describe Game do
       expect(game.board.draw?).to eq(true)
     end
 
-    it 'gets the move from the player' do
-      game = Game.new([:hal, :al])
-      board_string = [
-        ['X', nil, nil],
-        [nil, nil, nil],
-        [nil, nil, nil]
-      ]
-      current_player = :hal
-      position = 1
-      game.get_move(position, current_player)
-
-      expect(game.board.board_string).to eq(board_string)
-    end
+    # it 'gets the move from the player' do
+    #   game = Game.new([:hal, :al])
+    #   board_string = [
+    #     ['X', nil, nil],
+    #     [nil, nil, nil],
+    #     [nil, nil, nil]
+    #   ]
+    #   current_player = :hal
+    #   position = 1
+    #   game.get_move(position, current_player)
+    #
+    #   expect(game.board.board_string).to eq(board_string)
+    # end
   end
 end
