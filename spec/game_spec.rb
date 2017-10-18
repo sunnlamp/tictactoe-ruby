@@ -19,10 +19,9 @@ describe Game do
   end
 
   context '#switch_players' do
-    it 'should switch players between turns' do
+    it 'should switch players' do
       game = Game.new([:hal, :al], Board.new)
       current_player = :hal
-      other_player = :al
       game.switch_players
 
       expect(current_player).to eq(:hal)
@@ -30,7 +29,7 @@ describe Game do
   end
 
   context '#play' do
-    it 'runs a loop until there is a winner' do
+    it 'runs a loop until winner returns true' do
       game = Game.new([:hal, :al])
       game.board.make_move(1, 'X')
       game.board.make_move(4, 'X')
@@ -39,17 +38,7 @@ describe Game do
       expect(game.board.winner?).to eq(true)
     end
 
-    it 'requests the name of player 1' do
-
-    end
-
-    it 'requests the name of player 2' do
-
-    end
-
-
-
-    it 'runs a loop until there is a draw' do
+    it 'runs a loop until draw returns true' do
       game = Game.new([:hal, :al])
       game.board.make_move(1, 'X')
       game.board.make_move(2, 'O')
@@ -62,6 +51,20 @@ describe Game do
       game.board.make_move(9, 'X')
 
       expect(game.board.draw?).to eq(true)
+    end
+
+    it 'gets the move from the player' do
+      game = Game.new([:hal, :al])
+      board_string = [
+        ['X', nil, nil],
+        [nil, nil, nil],
+        [nil, nil, nil]
+      ]
+      current_player = :hal
+      position = 1
+      game.get_move(position, current_player)
+
+      expect(game.board.board_string).to eq(board_string)
     end
   end
 end
