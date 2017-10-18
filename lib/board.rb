@@ -77,6 +77,10 @@ class Board
     position.map { |index| index }
   end
 
+  def symbol_map
+    {}
+  end
+  
   def winner?
     winning_positions.each do |position|
       next if position.any? { |square| square == nil }
